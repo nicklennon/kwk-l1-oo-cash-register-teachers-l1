@@ -88,26 +88,26 @@ describe 'AmazonTransaction' do
 
 
   # BONUS: uncomment out each test to work on this part
-  # describe '#cancel_order' do
-  #   it 'subtracts the last transaction from the total' do
-  #     amazon_transaction.add_item("tomato", 1.76)
-  #     expect{amazon_transaction.cancel_order}.to change{amazon_transaction.total}.by(-1.76)
+  describe '#cancel_order' do
+    it 'subtracts the last transaction from the total' do
+      amazon_transaction.add_item("tomato", 1.76)
+      expect{amazon_transaction.cancel_order}.to change{amazon_transaction.total}.by(-1.76)
+    end
+  end
+
+  # #Completing this test requires knowledge of class variables, class methods and self.
+  # describe '.transaction_codes' do
+  #   it 'generates a random, six-digit code when a transaction is created' do
+  #       expect(amazon_transaction.transaction_code).to be > 100000
+  #       expect(amazon_transaction.transaction_code).to be < 999999
+  #     end
+
+  # it 'at the creation of a new transaction it saves each transaction\'s code to a class variable called transaction_codes' do
+  #     expect(AmazonTransaction.transaction_codes.length).to eq(16)
   #   end
   # end
 
-  #Completing this test requires knowledge of class variables, class methods and self.
-  # describe '.transaction_codes' do
-  #  it 'generates a random, six-digit code when a transaction is created' do
-  #       expect(amazon_transaction.transaction_code).to be > 100000
-  #       expect(amazon_transaction.transaction_code).to be < 999999
-  #    end
-
-  # it 'at the creation of a new transaction it saves each transaction\'s code to a class variable called transaction_codes' do
-  #    expect(AmazonTransaction.transaction_codes.length).to eq(16)
-  #  end
-  # end
-
-  #  describe '#print_receipt' do
+  #   describe '#print_receipt' do
   #     it 'prints the customer\'s receipt to a .txt file' do
   #       amazon_transaction_with_discount.add_item("cereal", 3.45)
   #       amazon_transaction_with_discount.add_item("orange juice", 2.00)
