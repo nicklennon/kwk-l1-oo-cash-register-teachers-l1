@@ -8,6 +8,7 @@ class AmazonTransaction
     @prime = false
   end
 
+  #adds item and updates the total price
   def add_item(title, price, quantity = 1)
     @last_transaction_amount = price*quantity
     @total += price*quantity
@@ -17,6 +18,7 @@ class AmazonTransaction
     end
   end
 
+  #If employee gives discount
   def apply_discount
     if @discount == 0 
       "There is no discount to apply."
@@ -26,6 +28,7 @@ class AmazonTransaction
     end
   end
   
+  #If amazon prime gives shipping discount
   def amazon_prime
     if @prime == false
       "You do not have a prime membership."
